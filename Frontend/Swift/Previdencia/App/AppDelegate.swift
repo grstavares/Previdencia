@@ -18,11 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let back = UIColor(red: 0 / 255, green: 33 / 255, blue: 71 / 255, alpha: 1)
-        let text = UIColor(red: 0 / 255, green: 88 / 255, blue: 142 / 255, alpha: 1)
-        let tint = UIColor(red: 0 / 255, green: 188 / 255, blue: 236 / 255, alpha: 1)
-        let selection = UIColor(red: 255 / 255, green: 179 / 255, blue: 93 / 255, alpha: 1)
-        AppColorPallete.shared.setPallete(background: back, fisrtLayer: text, text: text, tint: tint, selection: selection)
+        let back = UIColor(red: 53 / 255, green: 91 / 255, blue: 124 / 255, alpha: 1)
+        let text = UIColor(red: 75 / 255, green: 125 / 255, blue: 170 / 255, alpha: 1)
+        let tint = UIColor(red: 104 / 255, green: 154 / 255, blue: 199 / 255, alpha: 1)
+        let selection = UIColor(red: 251 / 255, green: 249 / 255, blue: 132 / 255, alpha: 1)
+        AppColorPallete.shared.setPallete(background: back, fisrtLayer: tint, text: text, tint: tint, selection: selection)
+        
+        let theme: AppTheme = AppTheme(statusBarStyle: .default, barBackgroundColor: back, barForegroundColor: UIColor.white, backgroundColor: UIColor.clear, textColor: text)
+        AppCoordinator.shared.currentTheme = theme
+        
         return true
     }
 

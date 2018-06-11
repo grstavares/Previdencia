@@ -7,8 +7,8 @@
 //
 
 import UIKit
-class AppCoordinator {
-    
+class AppCoordinator: ThemeProvider {
+
     public static let shared = AppCoordinator()
     private init() {
         
@@ -16,14 +16,33 @@ class AppCoordinator {
         let birth = DateComponents(calendar: Calendar.current, timeZone: TimeZone.current, era: nil, year: 1978, month: 10, day: 31, hour: 0, minute: 0, second: 0, nanosecond: 0, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
         let insc = "123.456-78"
         let user = PlazazPerson(name: name, birthDate: birth.date!, inscricao: insc)
+        
         self._user = user
+        self.theme = SubscribableValue<AppTheme>(value: .light)
         
     }
 
+    private var theme: SubscribableValue<AppTheme>
+    public var currentTheme: AppTheme {
+        get { return theme.value}
+        set { self.setNewTheme(newValue)}
+    }
+    
     private var _user: PlazazPerson?
     
     public func getAppFunctions() -> [Function] {return Function.allCases}
     public func getLoggedUser() -> PlazazPerson? {return self._user}
+
+    func subscribeToChanges(_ object: AnyObject, handler: @escaping (AppTheme) -> Void) {
+        self.theme.subscribe(object, using: handler)
+    }
+    
+    private func setNewTheme(_ newTheme: AppTheme) -> Void {
+        
+        let window = UIApplication.shared.delegate!.window!!
+        UIView.transition(with: window, duration: 0.3, options: [.transitionCrossDissolve], animations: { self.theme.value = newTheme}, completion: nil)
+        
+    }
     
     public func performAction(action: Action, sender: UIViewController) -> Void {
         
@@ -48,4 +67,16 @@ class AppCoordinator {
     
     enum Action {case showProfile, showDetail, openVC(UIViewController.Type)}
     
+}
+
+extension AppCoordinator {
+    
+    public var dataProvider: DataProvider {return DataProvider.shared}
+    
+}
+
+extension Themed where Self: AnyObject {
+    var themeProvider: AppCoordinator {
+        return AppCoordinator.shared
+    }
 }

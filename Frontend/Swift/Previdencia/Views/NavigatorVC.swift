@@ -8,14 +8,11 @@
 
 import UIKit
 
-class NavigatorVC: UINavigationController {
+class NavigatorVC: AppNavigationController {
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.navigationBar.barStyle = .blackTranslucent
-        self.navigationBar.backgroundColor = AppColorPallete.shared.backgroundColor
-        self.navigationItem.largeTitleDisplayMode = .automatic
 
     }
 

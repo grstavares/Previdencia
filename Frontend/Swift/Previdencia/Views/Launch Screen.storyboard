@@ -18,18 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="EfL-R8-kJB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="FW0-E0-Ekg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fJB-GQ-fgW">
+                                <rect key="frame" x="137" y="507.5" width="100" height="84"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EfL-R8-kJB" secondAttribute="bottom" id="2A7-x0-qbU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EfL-R8-kJB" secondAttribute="trailing" id="Lhz-4G-SYf"/>
-                            <constraint firstItem="EfL-R8-kJB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="eIU-d7-3z8"/>
-                            <constraint firstItem="EfL-R8-kJB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oW5-l2-sgs"/>
+                            <constraint firstItem="FW0-E0-Ekg" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="GHt-wB-Awm"/>
+                            <constraint firstItem="fJB-GQ-fgW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="M68-sn-7Bf"/>
+                            <constraint firstItem="FW0-E0-Ekg" firstAttribute="bottom" secondItem="Bcu-3y-fUS" secondAttribute="bottom" id="NdN-Ha-uux"/>
+                            <constraint firstItem="FW0-E0-Ekg" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="Td0-HX-R1R"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="fJB-GQ-fgW" secondAttribute="bottom" constant="75.5" id="ffY-oZ-Xq3"/>
+                            <constraint firstItem="FW0-E0-Ekg" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="mLh-NL-efx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -38,6 +43,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="2300" height="1572"/>
+        <image name="LaunchScreen" width="650" height="800"/>
+        <image name="logo" width="100" height="84"/>
     </resources>
 </document>

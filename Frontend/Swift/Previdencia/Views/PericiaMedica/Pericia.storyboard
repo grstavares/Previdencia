@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PericiaVC-->
+        <scene sceneID="S36-G0-2xD">
+            <objects>
+                <viewController storyboardIdentifier="PericiaVC" id="ahh-m2-stz" customClass="PericiaVC" customModule="Previdencia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nd2-ux-ps0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informações sobre Perícias e Junta Médica" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUN-dY-TSc">
+                                <rect key="frame" x="10" y="30" width="355" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ZHT-BE-B8n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTm-F8-EVD">
+                                <rect key="frame" x="241" y="130" width="124" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ait-tm-stk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Agendar Perícia"/>
+                                <connections>
+                                    <action selector="buttonAgendarPericiaClicked:" destination="ahh-m2-stz" eventType="touchUpInside" id="nV9-eA-mRC"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hz7-JI-W3F">
+                                <rect key="frame" x="10" y="180" width="355" height="291"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="juntaMedica" translatesAutoresizingMaskIntoConstraints="NO" id="h4n-MG-bVP">
+                                <rect key="frame" x="108.5" y="501" width="157" height="100"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="crw-1Z-67R"/>
+                                    <constraint firstAttribute="width" secondItem="h4n-MG-bVP" secondAttribute="height" multiplier="227:145" id="dbO-g2-fRF"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ny8-AJ-cbw" appends="YES" id="jtj-FX-cQN"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouk-7H-25H">
+                                <rect key="frame" x="10" y="611" width="355" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Junta Médica"/>
+                                <connections>
+                                    <action selector="buttonJuntaMedicaClicked:" destination="ahh-m2-stz" eventType="touchUpInside" id="R1z-3Z-PpK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hz7-JI-W3F" firstAttribute="leading" secondItem="hkv-Sv-j61" secondAttribute="leading" constant="10" id="E5Z-ds-g60"/>
+                            <constraint firstItem="ouk-7H-25H" firstAttribute="top" secondItem="h4n-MG-bVP" secondAttribute="bottom" constant="10" id="EJ3-Z3-EGn"/>
+                            <constraint firstItem="hkv-Sv-j61" firstAttribute="trailing" secondItem="ZUN-dY-TSc" secondAttribute="trailing" constant="10" id="Mzc-wB-W6Y"/>
+                            <constraint firstItem="hkv-Sv-j61" firstAttribute="trailing" secondItem="ouk-7H-25H" secondAttribute="trailing" constant="10" id="OfB-HH-I6X"/>
+                            <constraint firstItem="hkv-Sv-j61" firstAttribute="trailing" secondItem="cTm-F8-EVD" secondAttribute="trailing" constant="10" id="OfF-3f-ji9"/>
+                            <constraint firstItem="ZUN-dY-TSc" firstAttribute="leading" secondItem="hkv-Sv-j61" secondAttribute="leading" constant="10" id="OgD-Ho-nlL"/>
+                            <constraint firstItem="hkv-Sv-j61" firstAttribute="trailing" secondItem="cTm-F8-EVD" secondAttribute="trailing" constant="10" id="UTN-Fx-buq"/>
+                            <constraint firstItem="hkv-Sv-j61" firstAttribute="trailing" secondItem="Hz7-JI-W3F" secondAttribute="trailing" constant="10" id="Usl-pb-1Ni"/>
+                            <constraint firstItem="ZUN-dY-TSc" firstAttribute="top" secondItem="hkv-Sv-j61" secondAttribute="top" constant="10" id="cwi-Eq-o0e"/>
+                            <constraint firstItem="h4n-MG-bVP" firstAttribute="top" secondItem="Hz7-JI-W3F" secondAttribute="bottom" constant="30" id="dO3-VG-QS2"/>
+                            <constraint firstItem="ouk-7H-25H" firstAttribute="leading" secondItem="hkv-Sv-j61" secondAttribute="leading" constant="10" id="gOf-9J-De5"/>
+                            <constraint firstItem="h4n-MG-bVP" firstAttribute="centerX" secondItem="nd2-ux-ps0" secondAttribute="centerX" id="iv1-Bl-OW9"/>
+                            <constraint firstItem="Hz7-JI-W3F" firstAttribute="top" secondItem="cTm-F8-EVD" secondAttribute="bottom" constant="10" id="pa5-Nk-cN1"/>
+                            <constraint firstItem="hkv-Sv-j61" firstAttribute="bottom" secondItem="ouk-7H-25H" secondAttribute="bottom" constant="20" id="uwz-01-5gm"/>
+                            <constraint firstItem="cTm-F8-EVD" firstAttribute="top" secondItem="ZUN-dY-TSc" secondAttribute="bottom" constant="20" id="wat-EK-ufN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hkv-Sv-j61"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonAgendarPericia" destination="cTm-F8-EVD" id="SjW-lo-Q4b"/>
+                        <outlet property="buttonJuntaMedica" destination="ouk-7H-25H" id="MVE-SO-xIS"/>
+                        <outlet property="imageTapped" destination="ny8-AJ-cbw" id="jlk-Sa-XhM"/>
+                        <outlet property="tableView" destination="Hz7-JI-W3F" id="ItV-TS-I45"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TeJ-Jx-AYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ny8-AJ-cbw"/>
+            </objects>
+            <point key="canvasLocation" x="72.799999999999997" y="155.17241379310346"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="juntaMedica" width="227" height="145"/>
+    </resources>
+</document>

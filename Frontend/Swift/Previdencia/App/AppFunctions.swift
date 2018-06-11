@@ -69,7 +69,14 @@ extension AppCoordinator {
         func perform(from sender: UIViewController) -> Void {
 
             switch self {
-            case .resultados: return
+            case .resultados:
+
+                guard let vc = ResultadosVC.instantiate() else {return}
+                
+                if let navigator = sender.navigationController {
+                    navigator.pushViewController(vc, animated: true)
+                } else {sender.present(vc, animated: true, completion: nil)}
+                
             case .aposentadoriaPorIdade:
 
                 let idade = AppCoordinator.shared.getLoggedUser()!.birthDate
